@@ -17,6 +17,7 @@ def has_pythagorean_triplet(input):
     square = list(map(lambda x: x*x, input))
     square.sort()
     n = len(square)
+    '''
     for i in range(n-1, 1, -1):
         for j in range(0, i-1):
             for k in range(j+1, i):
@@ -24,8 +25,22 @@ def has_pythagorean_triplet(input):
                 if square[i] == square[j] + square[k]:
                     print(square[i], square[j], square[k])
                     return True
+    '''
+    for i in range(n-1, 1, -1):
+        j = 0
+        k = i-1
+        while( j < k):
+            print(i,j,k)
+            if square[i] == square[j]+square[k]:
+                print(square[i], square[j], square[k])
+                return True
+            else:
+                if square[i] > square[j]+square[k]: 
+                    j = j + 1
+                else:
+                    k = k - 1
     return False
 if __name__ == "__main__":
-    input = [13, 1, 4, 6, 5, 7, 9]
+    input = [3, 1, 4, 6, 5, 7, 9]
     print(has_pythagorean_triplet(input))
 
