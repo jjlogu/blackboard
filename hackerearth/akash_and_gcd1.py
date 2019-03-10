@@ -72,10 +72,10 @@ def f(x):
 
 if "__main__" == __name__:
     N = int(input())
-    print("Size: {}".format(N))
+    #print("Size: {}".format(N))
     A = list(map(lambda x:int(x), input().split()))
     gcds = list(map(f, A))
-    print("Array: {}".format(A))
+    #print("Array: {}".format(A))
     Q = int(input())
     while 0 != Q:
         query = input().split()
@@ -83,10 +83,11 @@ if "__main__" == __name__:
         Y = int(query[2])
         if 'C' == query[0]:
             sum = 0 
-            for i in range(0, Y):
+            for i in range(X, Y):
                 sum += gcds[i]
             print(sum)
         elif 'U' == query[0]:
             A[X] = Y
             gcds[X] = f(Y)
+        Q -= 1
 
