@@ -54,23 +54,53 @@ class Graph:
     def get_vertices(self):
         return self.vert_dict.keys()
 
-if __name__ == '__main__':
+def max_path_weight(node1, node2, previous_node = None):
+    '''
+        In a given graph g, find maximum edge weight in the path from a to b
+    '''
+    max_weight = 0
+    if [previous_node] == node1.get_connections():
+        return -1
+    if node2 in node1.get_connections():
+        return node1.get_weight(node2)
+    for node in node1.get_connections():
+        if node == previous_node:
+            continue
+        weight = max_path_weight(node, node2, node1)
+        if -1 == weight:
+            continue
+        max_weight = node1.get_weight(node)
+        if max_weight < weight:
+            max_weight = weight
+    return max_weight
 
-    g = Graph()
+
+if __name__ == '__main__':
 
     # number of testcases
     t = int(input())
     for i in repeat(None, t):
-        #number of nodes
-        N=int(input())
-        for j in range(1,N+1):
-            g.add_vertex(str(j))
+        g = Graph()
+
+        # number of nodes
+        N = int(input())
+        # for i in range(1,N+1):
+        #    g.add_vertex(i)
 
         # add edges
         for i in repeat(None, N-1):
-            edge = input().split()
-            g.add_edge(edge[0],edge[1], int(edge[2]))
+            edge = list(map(int, input().split()))
+            g.add_edge(edge[0],edge[1], edge[2])
 
+        sum = 0
+        for i in range(1, N+1):
+            for j in range(i+1, N+1):
+                weight = max_path_weight(g.vert_dict[i], g.vert_dict[j])
+                # print("({},{}) = {}".format(i, j, weight))
+                sum += weight
+        print(sum)
+
+'''
     for v in g:
         for w in v.get_connections():
             vid = v.get_id()
@@ -79,3 +109,4 @@ if __name__ == '__main__':
 
     for v in g:
         print( 'g.vert_dict[%s]=%s' %(v.get_id(), g.vert_dict[v.get_id()]))
+'''
