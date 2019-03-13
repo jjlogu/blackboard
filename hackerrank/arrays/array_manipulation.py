@@ -9,11 +9,28 @@ import sys
 
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):
+    """
     arr = [0] * n
     for query in queries:
         for i in  range(query[0]-1, query[1]):
             arr[i] += query[2]
     return max(arr)
+    """
+    #my_list.sort(key=operator.itemgetter(1)
+    values = []
+    for query in queries:
+        values.append((query[0], query[2]))
+        values.append((query[1]+1, -query[2]))
+
+    values.sort()
+    sm = 0
+    mx = 0
+    for value in values:
+       sm+=value[1] 
+       mx = max(mx, sm)
+
+    return mx
+
 
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
