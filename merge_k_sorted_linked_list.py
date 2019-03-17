@@ -41,8 +41,12 @@ def print_ll(head):
 
 def merge_k_sorted_ll(lists):
     head = tail = None
+    count = 0
+    count1 = 0
     while lists:
+        count += 1
         for i in range(1, len(lists)):
+            count1 +=1
             if lists[0] > lists[i]:
                 lists[0], lists[i] = lists[i], lists[0]
         if not head:
@@ -60,10 +64,8 @@ def merge_k_sorted_ll(lists):
             else:
                 del(lists[0])
             tail = tail.next
+    print(count, count1)
     return head 
-
-
-
 
 ll1 = Node(1, Node(4, Node(5)))
 ll2 = Node(1, Node(3, Node(4)))
