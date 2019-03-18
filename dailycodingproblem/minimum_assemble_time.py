@@ -38,8 +38,8 @@ def minimumTime(numOfParts, parts):
         dparts.popleft()
 
         numOfParts -= 1
-        print(dparts)
-    return dparts[0]
+        # print(dparts)
+    return total_time
 
 if "__main__" == __name__:
     print(minimumTime(4, [8,4,6,12]))
