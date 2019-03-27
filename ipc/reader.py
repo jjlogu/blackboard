@@ -8,7 +8,7 @@ def main():
     fd = os.open('/tmp/mmaptest', os.O_RDONLY)
 
     # Memory map the file
-    buf = mmap.mmap(fd, mmap.PAGESIZE, mmap.MAP_SHARED, mmap.PROT_READ)
+    buf = mmap.mmap(fd, mmap.PAGESIZE, mmap.MAP_SHARED, mmap.PROT_READ, access=mmap.ACCESS_READ)
 
     i = None
     s = None
