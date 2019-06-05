@@ -14,6 +14,9 @@ class parentThread(threading.Thread):
             time.sleep(1)
             self.i -= 1
         print("Parent exit")
+    def kill(self):
+        print("Parent kill")
+        self.i=3
 
 class childThread(threading.Thread):
     #def __init__(self, val):
@@ -28,5 +31,12 @@ class childThread(threading.Thread):
 if __name__ == "__main__":
     p = parentThread()
     p.start()
+    while True:
+        print(p.is_alive())
+        if not p.is_alive():
+            #p.kill()
+            p.start()
+            break
+        time.sleep(0.5)
     #p.join()
     print("Program exit")
