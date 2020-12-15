@@ -1,0 +1,7 @@
+Create a Go Program that reads the entire contents of a file called info.txt  using a scanner (bufio package) line by line.
+
+The file exists in the current working directory.
+
+$$$$$$$$$$
+
+#########
