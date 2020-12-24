@@ -1,4 +1,5 @@
 class Computer:
+    class_var = 10
 
     def __init__(self):
         self.__maxprice__ = 900
@@ -11,8 +12,12 @@ class Computer:
     def setMaxPrice(self, price):
         self.__maxprice__ = price
 
+print("Computer.class_var",Computer.class_var)
 c = Computer()
 c.sell()
+c.class_var = 100
+print("Computer.class_var",Computer.class_var)
+print("c.class_var",c.class_var)
 
 # change the price
 c.__maxprice__ = 1000
