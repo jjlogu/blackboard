@@ -39,8 +39,9 @@ func main() {
 
 	// newCars doesn't share the same backing array with cars
 	newCars = append(newCars, cars[0:2]...)
+	// newCars = append(newCars, cars[0], cars[1])
 
 	cars[0] = "Nissan"                              // only cars is modified
-	fmt.Println("cars:", cars, "newCars:", newCars) // => cars: [Nissan Honda Audi Range Rover] newCars: [Ford Honda
+	fmt.Println("cars:", cars, "newCars:", newCars) // => cars: [Nissan Honda Audi Range Rover] newCars: [Ford Honda Audi Range Rover]
 
 }
