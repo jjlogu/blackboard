@@ -1,0 +1,122 @@
+/*
+
+Roti:
+
+Wheat flour, water
+
+
+
+Cheese Sandwich:
+
+Cheese, bread, tomato, salt
+
+
+
+bread:
+
+Egg, milk, butter, sugar
+
+
+
+Paneer Kathi roll:
+
+Roti, onion, paneer, chilli powder, oil, salt
+
+*/
+
+/*
+Rest owner and chef
+
+list of incrediants
+
+menu
+
+input:
+list of raw items in kitchen
+receipe book - list of incediants available
+
+Water:
+	Water
+
+Roti:
+	Wheat flour, water
+
+
+Cheese Sandwich:
+	Cheese, bread, tomato, salt
+
+
+bread:
+	Egg, milk, butter, sugar
+
+
+Paneer Kathi roll:
+	Roti, onion, paneer, chilli powder, oil, salt
+
+*/
+
+
+/*
+	RawMaterial {
+		
+	}
+*/
+
+type Receipe struct {
+	name string
+	rawIncrediants  []string
+	interIncrediants []string // 
+}
+
+// Receipe {
+	 Name: "Paneer Kathi roll",
+	 rawIncrediants : []string{onion, paneer, chilli powder, oil, salt},
+	 interIncrediants: []string{"Roti"}
+}
+
+// receipes := []Receipe
+
+listRawMeterial := []string{ "Wheat flour", "water", "Cheese", "bread", "tomato", "salt", "onion", "Egg", "milk", "butter", "sugar" "paneer", "chilli" "powder", "oil", "salt" }
+
+//menuCard := []string{}
+
+// output : []string{"Roti",}
+// map[string]Receipe
+func TodaysMenuCard(receipes []Receipe, listRawMaterial []string) (menucard []string){
+	rDic := map[string]Receipe{}
+
+	for _,r := range receipes {
+		rDic[r.name] = r
+	}
+
+	lRawMet := map[string]bool
+	for _, rm := range listRawMeterials {
+		lRawMet[rm]=true
+	}
+
+	for _,r := range receipes {
+		//resolveRawIncrediants
+		
+		NotFound = false
+		for _, rm := range r.rawIncrediants {
+			if _, ok := lRawMet[rm]; ok == false {
+				NotFound = true
+				break
+			}
+		}
+		if NotFound == true {
+			continue
+		}
+		
+		if false == ableToresolveAllInterIncrediants(rDic, lRawMet, r.name) {
+			continue
+		}
+		// add to menu card
+		menucard := append(menucard, r.Name)
+	}
+	return
+}
+
+func ableToresolveAllInterIncrediants(rDic map[string]Receipe, lRawMet map[string]bool, name []string) bool {
+	// 
+}

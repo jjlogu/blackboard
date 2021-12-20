@@ -1,0 +1,5 @@
+What is the most interesting problem did you solved?
+How would you guide team?
+Briefly explain current project with architech decision.
+How would you review PR?
+

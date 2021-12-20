@@ -1,0 +1,86 @@
+
+/*
+
+Word break Util:
+
+Dictionary:
+{ i, like, sam, sung, samsung, mobile, ice, and, cream, icecream, man, go, mango}
+
+Input : "ilikeicecreamandmango"
+
+Output: i like ice cream and man go
+i like ice cream and mango
+i like icecream and man go
+i like icecream and mango
+
+
+i : i, ice, icecream
+l:like
+a: and
+m: man, mango, mobile
+
+
+*/
+
+l := []string{i, like, sam, sung, samsung, mobile, ice,
+and, cream, icecream, man, go, mango}
+
+
+//key = starting letter
+// value = list of strings
+dic := map[string]string{}
+
+/*
+{
+	i : [i, ice, icecream]
+	l:[like]
+	a: [and]
+	m: [man, mango, mobile]
+} 
+
+{
+	i : [icecream, ice, i] /* {
+		1: i
+		3: ice
+		7: icecream
+	} */
+}
+*/
+
+for word:=range l {
+	if _,ok:=dic[word[0]]; ok == false {
+		dic[word[0]] = []string{word}
+	} else {
+		dic[word[0]] = append(dic[word[0]], word)
+	}
+}
+
+
+// input = ilikeicecreamandmango
+
+input : "ilikeicecreamandmango"
+
+l:=1
+for i:=0; i<len(input); i+l {
+	lwords, ok := dic[input[i]]
+	l = 1
+	if ok == true {
+		//maxSize := 0
+
+		/* for ind, word := range lwords {
+			if len(word) > maxSize {
+				maxSize = len(word)
+				index = ind
+			}
+		} */
+
+		for ind, word := range lwords {
+			l = len(word)
+			if input[i:l] == word {
+				fmt.Printf("%s ", word)
+				break
+			}
+		}
+
+	}
+}  

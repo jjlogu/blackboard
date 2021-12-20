@@ -1,0 +1,63 @@
+/*
+
+Input N
+
+output print all fibno <n
+
+*/
+
+0, 1, 1, 2
+func fib() int{
+	x, y := 0, 1
+	return func() int {
+		x, y = x, y+
+
+	}
+}
+
+/*
+
+n = 1
+n > p
+p = 4
+arr[] = {1, 2, 3, 4, 5, -1, -2}
+
+
+take mid = size/2
+
+if arr[mid] == n {
+	return mid
+}
+if 
+
+
+arr[p:size(arr)]
+
+*/
+
+package main
+
+
+import "fmt"
+
+func fib() func() int {
+	x, y := 0, 1
+	return func() int {
+		x, y = y, x+y
+		return x
+	}
+}
+
+func main() {
+	f := fib()
+
+	n := 12
+	for {
+		f1 := f()
+
+		if f1 > n {
+			break
+		}
+		fmt.Println(f1)
+	}
+}

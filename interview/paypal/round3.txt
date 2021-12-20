@@ -1,0 +1,93 @@
+// RESTful
+message wordBreakRequest {
+	string paragaph
+	int maxLengthLine
+	bool wordwrap // ma
+}
+
+message wordBreakResponse {
+	string paragaph
+}
+
+HTTPResponse code:
+
+Service not available:
+
+lb
+handler
+
+//query length will be limitation if paragraph is too lengthy 
+
+POST /domain/util/wordBreak 
+INPUT:
+{
+	"paragraph" : "string", // Maximun length of this field 
+	"maxLengthLine" : int, 
+	"wordwrap": bool,
+}
+
+
+Possible Output:
+{
+	"pragraph": string, // processed data
+	"error": {
+		"Code": "string", // predefined error code
+		"Message" : "string" // additional detail if need
+	}
+}
+
+Sample:
+200 OK:
+{
+	"pragraph": "Hello!", // processed data
+	"error": {
+		"Code": "SUCCESS", // predefined error code
+		"Message" : "" // additional detail if need
+	}
+}
+
+
+4XX-> Bad Request
+{
+	"pragraph": "", // processed data
+	"error": {
+		"Code": "INVALID_INPUT", // predefined error code
+		"Message" : "Maximum length of string supported: XXXX" // additional detail if need
+	}
+}
+
+
+50X -> 
+{
+	"pragraph": "", // processed data
+	"error": {
+		"Code": "BUFFER_OVERFLOW", // predefined error code
+		"Message" : "" // additional detail if need
+	}
+}
+
+SLA:
+
+input string length:
+how long did it take to process -> wordBreak it took 
+
+
+
+Worst: string size = MaxLength, obtain the response time of API -> analase -> we will data what request/reponse -> detrive 95% percentile value
+
+
+CONNECT
+RESPONSE TIME 
+
+
+
+// Websocket
+message wordBreakRequest {
+	string char
+	int maxLengthLine
+	bool wordwrap // ma
+}
+
+message wordBreakResponse {
+	string char
+}
