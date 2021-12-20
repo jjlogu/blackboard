@@ -45,7 +45,7 @@ func main() {
 	// and if it already exists the function will truncate it before writing to file.
 
 	bs := []byte("Go Programming is cool!")
-	err = ioutil.WriteFile("c.txt", bs, 0644)
+	err = ioutil.WriteFile("c.txt", bs, 0644) // same as os.WriteFile
 	// error handling
 	if err != nil {
 		log.Fatal(err)

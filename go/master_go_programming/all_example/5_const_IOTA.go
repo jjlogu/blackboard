@@ -25,8 +25,8 @@ func main() {
 
 	const (
 		min1 = -500
-		max1 //gets its type and value form the previous constant. It's 500
-		max2 //in a grouped constants, a constant repeats the previous one -> 500
+		max1 //gets its type and value form the previous constant. It's -500
+		max2 //in a grouped constants, a constant repeats the previous one -> -500
 	)
 
 	// CONSTANTS RULES
@@ -63,6 +63,7 @@ func main() {
 
 	fmt.Println(x * y)
 	// => 5.5, No Error because x is untyped and gets its type when its used first time (float64).
+	fmt.Println(x * days) // works prints 35
 
 	// fmt.Println(v1 * v2)
 	// => Error: invalid operation: v1 * v2 (mismatched types int and float64)

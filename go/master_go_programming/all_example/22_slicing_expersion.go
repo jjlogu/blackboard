@@ -10,7 +10,14 @@ import "fmt"
 func main() {
 
 	// arrays, slices and strings are sliceable
-	// slicing doesn't modify the array or the slice, it returns a new one
+	// WRONG: slicing doesn't modify the array or the slice, it returns a new one
+	/*
+		https://tour.golang.org/moretypes/8
+		Slices are like references to arrays
+			A slice does not store any data, it just describes a section of an underlying array.
+			Changing the elements of a slice modifies the corresponding elements of its underlying array.
+			Other slices that share the same underlying array will see those changes.
+	*/
 
 	// declaring an [5]int array
 	a := [5]int{1, 2, 3, 4, 5}

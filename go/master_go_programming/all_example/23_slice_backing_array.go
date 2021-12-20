@@ -33,7 +33,15 @@ func main() {
 	arr1[1] = 2                       // modifying the array
 	fmt.Println(arr1, slice1, slice2) // -> [10 2 30 40] [10 2] [2 30]
 
-	// append() function creates a complete new slice from an existing slice
+	// Wrong: append() function creates a complete new slice from an existing slice
+	/*
+		func append(s []T, vs ...T) []T
+		The first parameter s of append is a slice of type T, and the rest are T values to append to the slice.
+
+		The resulting value of append is a slice containing all the elements of the original slice plus the provided values.
+
+		If the backing array of s is too small to fit all the given values a bigger array will be allocated. The returned slice will point to the newly allocated array.
+	*/
 	cars := []string{"Ford", "Honda", "Audi", "Range Rover"}
 	newCars := []string{}
 

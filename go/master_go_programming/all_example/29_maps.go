@@ -64,6 +64,7 @@ func main() {
 	fmt.Println(balances) // => map[CHF:600 EUR:555.11 GBP:800.8 USD:500.5]
 
 	// "comma ok" idiom is used to distinguish between a missing key:value pair and an existing key with value zero
+	// "comma ok" idiom reserved for builtin function. refer https://stackoverflow.com/questions/30129206/golang-return-multiple-values-issue/30135334#30135334
 	v, ok := balances["RON"]
 
 	//v is the key's corresponding value

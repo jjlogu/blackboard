@@ -61,7 +61,7 @@ func main() {
 
 	// ioutil.ReadFile() reads a file into byte slice
 	// this function handles opening and closing the file.
-	data, err = ioutil.ReadFile("test.txt")
+	data, err = ioutil.ReadFile("test.txt") // same as os.ReadFile
 	if err != nil {
 		log.Fatal(err)
 	}
