@@ -66,4 +66,6 @@ func main() {
 	// in the above example both myCar and yourCar variables have been modified.
 	fmt.Println(myCar) // => {VW 30000}
 
+	// In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both. (We'll see why over the next few pages.) Refer: https://go.dev/tour/methods/8
+
 }

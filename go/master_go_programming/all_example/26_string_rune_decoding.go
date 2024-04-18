@@ -54,7 +54,7 @@ func main() {
 
 	// decoding a string rune by rune automatically:
 	for i, r := range str { //the first value returned by range is the index of the byte in string where rune starts
-		fmt.Printf("%d -> %c\n", i, r) // => ţară
+		fmt.Printf("%d -> %c\n", i, r) // => ţară  0 -> ţ 2 -> a 3 -> r 4 -> ă
 	}
 
 }

@@ -27,7 +27,7 @@ func main() {
 	// printing i, j and k
 	fmt.Println("i:", i, "j:", j, "k:", k)
 
-	// ii == jj  // -> error: cannot assign float to int (Go is a strong typed language)
+	// i == j  // -> error: cannot assign float to int (Go is a strong typed language)
 
 	// declaring and initializing a new variable of type string (type inference)
 	var s2 = "Go!"

@@ -51,5 +51,5 @@ func main() {
 	you.info = 40
 	you.info = []float64{4.5, 6., 8.1}
 
-	fmt.Println(you.info)
+	fmt.Println(you.info) // => [4.5 6 8.1]
 }

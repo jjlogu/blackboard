@@ -47,6 +47,7 @@ Brand: Nike`)
 
 	// concatenating strings (+)
 	// Go creates a new string because strings are immutable in Go (this is not efficient).
+	// Refer: https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
 	var s3 = "I love " + "Go " + "Programming"
 	fmt.Println(s3 + "!") // -> I love Go Programming!
 
